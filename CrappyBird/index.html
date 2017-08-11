@@ -1,0 +1,97 @@
+<!DOCTYPE HTMl>
+<html lang="en">
+<style>
+    body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #45d678;
+    font-family: sans-serif;
+    background: url(Images/f.jpg) no-repeat;
+}
+
+#menu{
+    width: 50%;
+    transition: 2s;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    
+}
+
+#play,#instructions,#exit{
+    width: 50%;
+    background-color: gainsboro;
+    color: black;
+    text-align: center;
+    font-weight: 700;
+    font-family: cursive;
+    padding: 10px;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#play:hover,#instructions:hover,#exit:hover{
+    background-color: white;
+}
+
+
+#showinstructions,#showinstruction,#avataar{
+    background-color: cornsilk;
+    color:black;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+    
+    
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Moto Racer</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+    
+<body>
+<div id="menu">
+    <a href="indexgame.html"><button id="play">PLAY</button></a>
+        <button id="instructions">INSTRUCTIONS</button>
+        <div id="showinstructions"><h3>Save Your Bird!! You are only saviour of your bird. Click the screen to move it against the gravity and let the bird pass between the bars. The more your cross the more you earn. SCORE:<br>0-5: BRONZE<br>6-10:SILVER<br>11-15:GOLD<br> >15:PLANTINUM </h3><h3>Got A Knack Drive The Hack !</h3></div>
+        <button id="exit" >ABOUT</button>
+        <div id="showinstruction">Flappy Bird Developed For Project<br>Version 1.0</div>
+    </div>
+    
+    
+</body>
+<script src="jquery-2.1.3.min.js"></script>
+<script>
+    var ps=1;
+    var p=1;
+     $('#showinstruction').hide();
+   $('#exit').click(function(){
+       if(ps==1){
+            $('#showinstruction').show();
+            ps=0;
+        }else{
+            $('#showinstruction').hide();
+            ps=1;
+        }
+   });
+    
+     $('#showinstructions').hide();
+    $('#playlevel').hide();
+
+    $('#instructions').click(function(){
+        if(p==1){
+            $('#showinstructions').show();
+            p=0;
+        }else{
+            $('#showinstructions').hide();
+            p=1;
+        }
+    });
+    
+    
+</script>

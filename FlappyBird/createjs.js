@@ -1,4 +1,4 @@
-
+level=1;
         window.requestAnimFrame = (function () {
             return window.requestAnimationFrame ||
                 window.webkitRequestAnimationFrame ||
@@ -723,6 +723,7 @@
 				var X = (FB.WIDTH/2-(FB.digits.length*14)/2);				
 				for(var i = 0; i < FB.digits.length; i++)
 				{
+                  FB.Draw.text("Level "+level, 80, 22, 16, 'black');
 				  FB.Draw.Image(FB.fonts[Number(FB.digits[i])],X+(i*14),10);
 				}
 			}
@@ -743,7 +744,8 @@
 				  medal = "gold";
 			   if(score >= 20)
 				  medal = "platinum";
-			
+			     level=score/5+1;
+                
 				return medal;
 			}
 			this.getHighScore = function(){
@@ -800,6 +802,7 @@
 					FB.Draw.Image(this.replay,102.5,260);
 					FB.Draw.text(FB.score.coins, 220, 185, 15, 'black');
 					FB.Draw.text(this.highscore, 220, 225, 15, 'black');
+                    FB.Draw.text("Died On Level "+level, 100, 245, 15, 'black');
 				}
 			}
 		
